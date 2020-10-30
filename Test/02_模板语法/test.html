@@ -39,6 +39,8 @@
     <img v-bind:src="imgUrl" alt="百度一下">
     <img :src="imgUrl" alt="百度一下">
     <h2>3.指令二：绑定事件监听</h2>
+    <button v-on:click="test">点我</button>
+    <button @click="test">点我</button>
 
 </div>
 
@@ -50,6 +52,11 @@
         data: {
             msg: '<a href="https://www.baidu.com">I Will Back!</a>',
             imgUrl: 'https://www.baidu.com/img/flexible/logo/pc/result.png'
+        },
+        methods: {
+            test () {
+                alert('好啊!!!')
+            }
         }
     })
 </script>
