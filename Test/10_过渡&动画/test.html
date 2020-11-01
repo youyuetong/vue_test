@@ -3,6 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>10_过渡&动画</title>
+    <style>
+        /*显示/隐藏的过滤效果*/
+        .xxx-enter-active,.xxx-leave-active {
+            transition: opacity 1s;
+        }
+        /*隐藏时的样式*/
+        .xxx-enter, .xxx-leave-to {
+            opacity: 0;
+        }
+        /*显示的过滤效果*/
+        .move-enter-active{
+            transition: all 1s;
+        }
+        /*隐藏的过滤效果*/
+        .move-leave-active{
+            transition: all 3s;
+        }
+        /*隐藏时的样式*/
+        .move-enter, .move-leave-to{
+            opacity: 0;
+            transform: translateX(20px);
+        }
+
+    </style>
+
+
 </head>
 <body>
 <!--
@@ -20,19 +46,25 @@
     xxx-enter：指定隐藏时的样式
 -->
 
-<div id="test">
+<div id="test1">
     <button @click="isShow=!isShow">toggle</button>
     <transition name="xxx">
-        <p v-show="isShow" class="xxx-enter-to">hello</p>
+        <p v-show="isShow">hello</p>
     </transition>
+</div>
 
+<div id="test2">
+    <button @click="isShow=!isShow">toggle</button>
+    <transition name="move">
+        <p v-show="isShow">hello</p>
+    </transition>
 </div>
 
 
 <script type="text/javascript" src="../vue.js"></script>
 <script type="text/javascript">
     new Vue({
-        el: '#test',
+        el: '#test1',
         data (){
             return {
                 isShow: true
@@ -40,6 +72,15 @@
         }
 
     })
+     new Vue({
+            el: '#test2',
+            data (){
+                return {
+                    isShow: true
+                }
+            }
+
+        })
 
 
 </script>
