@@ -1,10 +1,24 @@
-创建vue项目
+1.创建vue项目
     npm install -g vue-cli
     vue init webpack vue_demo
     cd vue_demo
     npm install
     npm run dev
     访问：http://localhost:8080/
-模板项目的结构
-    |--build:webpack:相关的配置文件夹(基本不需要修改)
-        |--dev-server.js:通过express启动后台服务器
+2.项目的打包与发布
+    打包：npm run build
+    发布-1、使用静态服务器工具包
+            npm install -g serve
+            serve dist
+            访问：http://localhost:5000
+        2、使用动态web服务器(tomcat)
+            修改配置：webpack.prod.conf.js
+                output: {
+                    //打包文件夹的名称
+                    buildPath: '/xxx/'
+                }
+            重新打包：
+                npm run build
+            修改dist文件夹为项目名称：xxx
+            将xxx拷贝到运行的tomcat的webapps目录下------在webstrom中配置tomcat进行下载down
+            访问：http://localgist:8080/xxx
