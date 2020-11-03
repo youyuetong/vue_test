@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示格式化的日期时间</title>
+</head>
+<body>
+<!--需求：对当前时间进行指定格式显示-->
+<!-- Moment.js
+        JavaScript日期处理类库
+-->
+
+<div id="test">
+    <h2>显示格式化的日期时间</h2>
+    <p>{{date}}</p>
+    <p>完整版：{{date | dateString}}</p>
+    <p>年月日：{{date | dateString('YYYY-MM-DD')}}</p>
+    <p>时分秒：{{date | dateString('HH:mm:ss')}}</p>
+</div>
+<script type="text/javascript" src="../vue.js"></script>
+<!-- Moment.js 是一个 JavaScript 日期处理类库，用于解析、检验、操作、以及显示日期。  -->
+<script type="text/javascript" src="../moment.js"></script>
+<script type="text/javascript">
+    // 自定义过滤 value-date format-日期格式
+    Vue.filter('dateString', function (value, format) {
+        //格式化日期   format || 或者
+        return moment(value).format(format || 'YYYY-MM-DD HH:mm:ss')
+    })
+    /**
+     Vue.filter('dateString', function (value, format='YYYY-MM-DD HH:mm:ss') {
+        //格式化日期   format || 或者
+        return moment(value).format(format)
+    })
+     */
+
+
+    new Vue({
+        el : '#test',
+        data:{
+            date: new Date()
+        }
+    })
+</script>
+</body>
+</html>
