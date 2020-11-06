@@ -22,3 +22,8 @@
             修改dist文件夹为项目名称：xxx
             将xxx拷贝到运行的tomcat的webapps目录下------在webstrom中配置tomcat进行下载down
             访问：http://localgist:8080/xxx
+3、eslint
+    1）ESLint是一个代码规范检查工具
+    2）它定义了很多特定的规则，一旦你的代码违背了某一规则，eslint会作出非常有用的提示
+    3）官网：http：//eslint.org/
+    4)基本已替代以前的JSLint
