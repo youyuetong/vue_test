@@ -27,3 +27,11 @@
     2）它定义了很多特定的规则，一旦你的代码违背了某一规则，eslint会作出非常有用的提示
     3）官网：http：//eslint.org/
     4)基本已替代以前的JSLint
+
+vue项目中常用的2个ajax库
+    vue-resource
+        vue插件，非官方库，vue1.x使用广泛
+        npm install vue-resource --save
+    axios
+        通用的ajax请求库，官方推荐，vue2.x使用广泛
+        npm install axios --save
